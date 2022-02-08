@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CreateAccountView, UserPageView
+from .views import CreateAccountView, UserPageView, MyStoryView
 
 app_name = 'users'
 
@@ -8,4 +8,6 @@ urlpatterns = [
     name='createAccount'),
     path('profile/', UserPageView.as_view(),
     name='profile'),
+    path('profile/mystories', MyStoryView.as_view(),
+    name='profile/mystories'),
 ]

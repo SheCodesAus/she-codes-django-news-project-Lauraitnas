@@ -10,5 +10,6 @@ class NewsStory(models.Model):
         on_delete=models.CASCADE
     )
     pub_date = models.DateTimeField()
+    url = models.URLField(max_length = 200, default="")
     content = models.TextField()
 

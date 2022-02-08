@@ -1,24 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
+
+
+/* * {
+    border: solid blue;
+} */
+
+h2{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+}
+
+h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+
+
+p {
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 2rem;
+    padding:10px;
+}
+
 .story-card {
-    margin: 2px;
+    margin: 10px;
     border: 1px solid #000;
-    padding: 5px;
+    padding: 3px;
+
 }
 
 .story-card img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
+    object-fit:cover;
+    text-align: center;
 }
 
 #latest-stories {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
-    max-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 
+#latest-stories .story-card {
+    width: 27%;
+    justify-content: space-between;
+}
+
+
+
+/* 
 #story-card-1 {
     grid-area: left-1;
 }
@@ -33,9 +70,9 @@
 
 #story-card-4 {
     grid-area: right-3;
-}
+} */
 
-#story-card-2 a,
+/* #story-card-2 a,
 #story-card-3 a,
 #story-card-4 a {
     display: flex;
@@ -62,25 +99,57 @@
     width: 33%;
     height: 100%;
     margin-right: 5px;
-}
+} */
 
 #all-stories {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction:row;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+
 }
 
 #all-stories .story-card {
-    flex-basis: 32%;
-    flex-grow: 1;
+    width: 27%;
+    justify-content: space-between;
 }
 
 #story-content {
-    text-align: justify;
+    justify-content: space-around;
+    text-align: center;
+    padding: 5px 300px 0 300px;
+}
+
+.story_author {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    color: #8245af;
+
 }
 
 #story-content img {
-    float: right;
     margin: 0 0 10px 10px;
-    width: 50%;
+    object-fit:cover;
+    width: 500px;
+
 }
+
+#new-story {
+    color: #f9a427;
+    background-color: #8245af;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    border: solid;
+    align-content: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.button {
+    text-align: center;
+}
+

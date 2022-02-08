@@ -9,21 +9,21 @@ header {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
+    margin-bottom: 50px;
 }
 
-img {
+/* img {
     filter: grayscale(100%);
-}
+} */
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+    font-family: 'Bebas Neue', cursive;
 }
 
 h3 {
@@ -34,21 +34,26 @@ h3 {
 #header-text {
     flex-basis: 80%;
     display: flex;
+    
+}
+
+#main-header {
+    width: 100%;
+    max-height: 400px;
 }
 
 nav {
-    flex-basis: 20%;
+    /* flex-basis: 20%; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
 }
 
 a {
     margin: 2px;
     text-decoration: none;
-    color: #000;
 }
 
 a, p {
-    font-family: monospace;
+    font-family: 'Oswald', sans-serif;
 }

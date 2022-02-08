@@ -1,7 +1,10 @@
+from re import template
 from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
+from users.models import CustomUser
+from django.core.exceptions import PermissionDenied
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -12,7 +15,7 @@ class IndexView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_stories'] = NewsStory.objects.all()[:4]
+        context['latest_stories'] = NewsStory.objects.all()[:3]
         context['all_stories'] = NewsStory.objects.all()
         return context
 
@@ -32,3 +35,15 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class DeleteStoryView(generic.DeleteView):
+    model = NewsStory
+    template_name = "news/storyDelete.html"
+    context_object_name = "story"
+    success_url = reverse_lazy('news:index')
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj.author != self.request.user:
+            raise PermissionDenied
+        return obj
