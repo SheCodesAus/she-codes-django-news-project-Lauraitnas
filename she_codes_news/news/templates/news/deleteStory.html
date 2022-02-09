@@ -4,7 +4,8 @@
 
 <form action="" method="Post">
     {% csrf_token %}
-    {{form.as_p}}
+    <h3>Do you want to delete the following item?</h3>
+    <p>{{story.title}}</p>
     <input type="submit" value="submit">
 </form>
 

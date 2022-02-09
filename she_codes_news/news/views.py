@@ -38,7 +38,7 @@ class AddStoryView(generic.CreateView):
 
 class DeleteStoryView(generic.DeleteView):
     model = NewsStory
-    template_name = "news/storyDelete.html"
+    template_name = "news/deleteStory.html"
     context_object_name = "story"
     success_url = reverse_lazy('news:index')
 
