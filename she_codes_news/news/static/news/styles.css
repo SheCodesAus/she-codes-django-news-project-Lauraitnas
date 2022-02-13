@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
 
 
-/* * {
-    border: solid blue;
-} */
+
 
 h2{
     text-align: center;
-    font-family: 'Bebas Neue', cursive;
     font-size: 50px;
 }
 
@@ -39,6 +36,10 @@ p {
     text-align: center;
 }
 
+.external-div{
+    margin-top: 150px;
+}
+
 #latest-stories {
     display: flex;
     flex-wrap: wrap;
@@ -53,53 +54,12 @@ p {
     justify-content: space-between;
 }
 
-
-
-/* 
-#story-card-1 {
-    grid-area: left-1;
+#header-image {
+    background-color: #8245af;
+    background-blend-mode:screen;
+    
 }
 
-#story-card-2 {
-    grid-area: right-1;
-}
-
-#story-card-3 {
-    grid-area: right-2;
-}
-
-#story-card-4 {
-    grid-area: right-3;
-} */
-
-/* #story-card-2 a,
-#story-card-3 a,
-#story-card-4 a {
-    display: flex;
-    max-height: 120px;
-    width: 100%;
-    height: 100%;
-}
-
-#story-card-2 .story-card-text h3,
-#story-card-3 .story-card-text h3,
-#story-card-4 .story-card-text h3 {
-    font-size: 16px;
-}
-
-#story-card-2 .story-card-text h4,
-#story-card-3 .story-card-text h4,
-#story-card-4 .story-card-text h4 {
-    font-size: 12px;
-}
-
-#story-card-2 img,
-#story-card-3 img,
-#story-card-4 img {
-    width: 33%;
-    height: 100%;
-    margin-right: 5px;
-} */
 
 #all-stories {
     display: flex;
@@ -108,7 +68,7 @@ p {
     align-content: center;
     justify-content: center;
     margin-bottom: 100px;
-    margin-top: 100px;
+    margin-top: 50px;
 
 }
 
@@ -138,88 +98,17 @@ p {
 
 }
 
-#new-story {
+.new-story {
+    text-align: center;
+}
+
+.button {
     color: #f9a427;
     background-color: #8245af;
     text-align: center;
     font-size: 20px;
     padding: 15px;
     border: solid;
-    align-content: center;
     font-family: 'Bebas Neue', cursive;
-}
-
-.button {
-    text-align: center;
-}
-
-
-
-
-
-
-form {
-    margin: 50px auto;
-    width: 100%;
-}
-
-
-.form-item {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
-    flex-direction: column;
-    padding: 5px;
-}
-
-.form-item label {
-    font-size: 20px;
-    color: #bfd2d9;
-    padding: 10px;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
-}
-
-.form-item input,
-.form-item textarea {
-    flex-basis: 50%;
-    background-color: #002535;
-}
-
-.form-item input:hover,
-.form-item textarea:hover {
-    border: 2px solid #bfd2d9;
-}
-
-.form-item input,
-.form-item textarea,
-.form-item button {
-    border: 2px solid #22646e;
-    padding: 5px;
-    font-size: 18px;
-    background-color: #002535;
-}
-
-.form-item input,
-.form-item textarea {
-    color: #bfd2d9;
-}
-
-.form-item button {
-    margin-top: 30px;
-    font-size: 20px;
-    font-family: 'Playfair Display', serif;
     letter-spacing: 2px;
-}
-
-.form-item button:hover {
-    border: 2px solid #22646e;
-    background-color: #bfd2d9;
-    color: #002535;
-}
-
-.form-item button {
-    width: 100px;
-    color: #bfd2d9;
 }

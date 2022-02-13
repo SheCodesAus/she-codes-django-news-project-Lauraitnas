@@ -7,35 +7,34 @@
 
 {% block content %}
 
-    <div id="header-image"><img src="/static/images/mentors2.png" alt="Shecoders" style="width:100%;"></div>
+    <div id="header-image"><img src="/static/images/coders2.png" alt="Shecoders" style="width:100%;"></div>
 
-    <h2>Latest News</h2>
-
-    <div id="latest-stories">
-        {% if latest_stories %}
-            {% for story in latest_stories %}
-                {% include "./storyCard.html" with story=story position=forloop.counter %}
-            {% endfor %}
-        {% else %}
-            <p>No stories are available.</p>
-        {% endif %}
+    <div class="external-div">
+        <h2>Latest News</h2>
+        <div id="latest-stories">
+            {% if latest_stories %}
+                {% for story in latest_stories %}
+                    {% include "./storyCard.html" with story=story position=forloop.counter %}
+                {% endfor %}
+            {% else %}
+                <p>No stories are available.</p>
+            {% endif %}
+        </div>
     </div>
     
+    <div class="new-story"><a class="button" href="{% url 'news:newStory' %}">Write New Story</a></div>
     
-    <div class="button"><a id="new-story" href="{% url 'news:newStory' %}">Write New Story</a></div>
-    
-
-    <h2>All News</h2>
-
-    <div id="all-stories">
-        {% if all_stories %}
-            {% for story in all_stories %}
-            {% include "./storyCard.html" with story=story %}
-            {% endfor %}
-        {% else %}
-            <p>No stories are available.</p>
-        {% endif %}
+    <div class="external-div">
+        <h2>All News</h2>
+        <div id="all-stories">
+            {% if all_stories %}
+                {% for story in all_stories %}
+                {% include "./storyCard.html" with story=story %}
+                {% endfor %}
+            {% else %}
+                <p>No stories are available.</p>
+            {% endif %}
+        </div>
     </div>
-
 
 {% endblock %}

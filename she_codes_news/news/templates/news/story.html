@@ -14,7 +14,7 @@
     <h4 class="story_author">{{ story.author }} | {{story.pub_date}}</h4>
 
     <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
+        <img src="{{story.url}}">
         {{ story.content|linebreaks }}
     </div>
 </div>
