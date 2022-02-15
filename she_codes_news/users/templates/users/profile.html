@@ -10,17 +10,17 @@
 <div id="profile_header">
     <img id="profile_picture" src="https://picsum.photos/600">
     <div id="bio">
-        <h2>Hello {{ user.username }}!</h2>
+        <h2>Hello {{ customuser.username }}!</h2>
         <p>Bio</p>
     </div>
-    <a href="{% url 'users:editAccount' %}">Edit your account</a>
+    <a href="{% url 'users:editAccount' customuser.id %}">Edit your account</a>
 </div>
 
 <h2>My Stories</h2>
 
     <div id="my-stories">
-        {% if my_stories %}
-            {% for story in my_stories %}
+        {% if customuser.newsstory_set.all %}
+            {% for story in customuser.newsstory_set.all %}
                 {% include "news/storyCard.html" with story=story position=forloop.counter %}
             {% endfor %}
         {% else %}
