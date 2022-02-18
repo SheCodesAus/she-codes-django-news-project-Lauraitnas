@@ -9,21 +9,29 @@
 {% block content %}
 <div class="main-div">
     <div id="profile_header">
-        <div id="profile_picture">
+        <div class="profile_picture">
         {% if customuser.profile_picture != "" %}
-            <img src="{{customuser.profile_picture}}">
+            <img class="profile_picture" src="{{customuser.profile_picture}}">
         {% else %}
-            <img src="https://picsum.photos/600">
+            <img class="profile_picture" src="https://picsum.photos/600">
         {% endif %}
         </div>
         <div id="bio">
-            <h3>Hello {{ customuser.username }}!</h3>
+            {% if customuser == request.user %}
+                <h3>Hello {{ customuser.username }}!</h3>
+            {% else %}
+            <h3>This is {{ customuser.username }}'s profile!</h3>
+            {% endif %}
             <p>{{customuser.bio}}</p>
         </div>
         <a id="edit-account" href="{% url 'users:editAccount' customuser.id %}">Edit your account</a>
+        <div id="social-media">
+            <a href="{{ customuser.github }}"><img class="social" src="/static/images/github.png" alt="Github"></a>
+            <a href="{{ customuser.linkedin }}"><img class="social" src="/static/images/linkedin.png" alt="Linkedin"></a>
+        </div>
     </div>
     <div id="my-stories-div">
-        <h1>My Stories</h1>
+        <h2 class="title">My Stories</h2>
         <div id="my-stories">
             {% if customuser.newsstory_set.all %}
                 {% for story in customuser.newsstory_set.all %}
@@ -33,7 +41,7 @@
                 <p>No stories are available.</p>
             {% endif %}
         </div>
-        <div><a class="button" href="{% url 'news:newStory' %}">Write New Story</a></div>
+        <button class="button" href="{% url 'news:newStory' %}">Write New Story</button>
     </div>
 </div>
 

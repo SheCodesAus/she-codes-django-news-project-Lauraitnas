@@ -16,7 +16,7 @@ class CreateAccountView(CreateView):
 
 class EditAccountView(generic.UpdateView):
     model = CustomUser
-    fields = ['first_name', 'last_name', 'email', 'profile_picture', 'bio']
+    fields = ['first_name', 'last_name', 'email', 'profile_picture', 'bio', 'github', 'linkedin']
     success_url = reverse_lazy('users:my_profile')
     # context_object_name = "user"
     template_name = 'users/editUser.html'
