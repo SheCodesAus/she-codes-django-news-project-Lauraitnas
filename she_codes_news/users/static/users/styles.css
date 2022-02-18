@@ -1,34 +1,98 @@
-/* * {
-    border: solid red;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
+
+
+
+.main-div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
 
 h2 {
     font-size: 30px;
+    text-align: center;
 }
-#profile_picture {
-    max-width: 400px;
-    margin-left: 20px;;
+
+h3 {
+    padding: 10px;
 }
 
 #profile_header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: space-between;
+    max-width: 20%;
+    padding: 30px;
+}
+
+#profile_picture {
+    max-width: 400px;
+    padding-bottom: 20px;
+    align-self: center;
 }
 
 #bio {
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
+    text-align: center;
 }
 
-#new-story {
+#edit-account {
+    color: #f9a427;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    border: solid #8245af;
+    align-content: center;
+    max-width: 80%;
+    align-self: center;
+}
+
+#my-stories-div{
+    width:70%;
+    box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+    -moz-box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+    -webkit-box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+    -o-box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+}
+
+
+.story-card {
+    margin: 10px;
+    border: 1px solid #000;
+    padding: 3px;
+
+}
+
+.story-card img {
+    width: 100%;
+    height: 250px;
+    object-fit:cover;
+    text-align: center;
+}
+
+#my-stories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+#my-stories .story-card {
+    width: 33%;
+    justify-content: space-around;
+}
+
+
+.button {
     color: #f9a427;
     background-color: #8245af;
     text-align: center;
     font-size: 20px;
     padding: 15px;
     border: solid;
-    align-content: center;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
 }
-

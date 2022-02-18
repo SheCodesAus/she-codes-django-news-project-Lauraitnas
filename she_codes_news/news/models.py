@@ -14,6 +14,9 @@ class NewsStory(models.Model):
     category = models.ForeignKey('news.Category', related_name='stories', on_delete=models.CASCADE, null=True, blank=True)
     content = models.TextField()
 
+    class Meta:
+        ordering = ['-pub_date']
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
     def __str__(self):

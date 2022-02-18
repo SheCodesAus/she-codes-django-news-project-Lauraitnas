@@ -6,7 +6,7 @@
             <img src="https://picsum.photos/600">
         {% endif %}
         <div class="story-card-text">
-            <h3>{{ story.title }}</h3>
+            <h3 class="story-title">{{ story.title }}</h3>
             <a href="{% url 'users:profile' story.author.id %}"><h4>{{ story.author }}</h4></a>
             <h4>{{ story.pub_date }}</h4>
             {% if story.author == request.user %}
