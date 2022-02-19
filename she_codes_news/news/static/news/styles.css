@@ -91,7 +91,8 @@ p {
 #story-content {
     justify-content: space-around;
     text-align: center;
-    padding: 5px 300px 0 300px;
+    max-width: 55%;
+    flex-direction: column;
 }
 
 .story_author {
@@ -102,12 +103,6 @@ p {
 
 }
 
-#story-content img {
-    margin: 0 0 10px 10px;
-    object-fit:cover;
-    width: 500px;
-
-}
 
 .new-story {
     text-align: center;
@@ -122,4 +117,22 @@ p {
     border: solid;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 2px;
+}
+
+.flex-div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    
+}
+
+#story-wrapper {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.story_image{
+    max-width: 100%;
 }

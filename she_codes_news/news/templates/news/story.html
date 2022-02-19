@@ -8,32 +8,37 @@
 {% endblock %}
 
 {% block content %}
-
-<div id="story-wrapper">
-    <h2>{{ story.title }}</h2>
-    <h4 class="story_author">{{ story.author }} | {{story.pub_date}}</h4>
-
+<div class="flex-div">
+    <div id="story-wrapper">
+        <img class="story_image" src="{{story.url}}"> 
+        <img src="{{story.author.profile_picture}}">
+        <h4 id="story_author"> Written by {{ story.author }}</h4>
+        <p>{{story.author.bio}}</p>
+    </div>
     <div id="story-content">
-        <img src="{{story.url}}">
-        {{ story.content|linebreaks }}
+        <div>
+            <h2>{{ story.title }}</h2>
+            <h4>{{story.pub_date}} | {{story.category}}</h4>
+            <p>{{ story.content|linebreaks }}</p>
+        </div>
+        <div class="comments">
+            <h2>Comments...</h2>
+            <button><a href="{% url 'news:newComment' story.id %}">Add comment</a></button>
+            {% if not story.comments %}
+                <h3>No comments yet </h3>
+            {% else %}
+            <br></br>
+                {% for comment in story.comments.all %}
+                    <strong>
+                    {{comment.name}}
+                    {{comment.date_added}}
+                    </strong>
+                    {{comment.body}}
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
 </div>
-<div>
-    <h2>Comments...</h2>
-    {% if not story.comments %}
-        <h3>No comments yet </h3>
-    {% else %}
 
-    <a href="{% url 'news:newComment' story.id %}">Add comment</a>
-    <br></br>
-        {% for comment in story.comments.all %}
-            <strong>
-            {{comment.name}}
-            {{comment.date_added}}
-            </strong>
-            {{comment.body}}
-        {% endfor %}
-    {% endif %}
-</div>
 
 {% endblock %}
