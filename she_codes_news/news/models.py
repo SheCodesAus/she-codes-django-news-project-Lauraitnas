@@ -23,13 +23,12 @@ class Category(models.Model):
         return self.name
 
 
-# class Snippet(models.Model):
-#     title = models.CharField(max_length=100)
-#     body = models.TextField()
-#     created = models.DateTimeField(auto_now_add=True)
 
-#     def __str__(self):
-#         return self.title
-    
-    # class Meta:
-    #     ordering = ('created',)
+class Comment(models.Model):
+    newsstory = models.ForeignKey(NewsStory, related_name="comments", on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    body = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def  __str__(self):
+        return '%s - %s' % (self.newsstory.title, self.name)

@@ -1,7 +1,7 @@
 from re import template
 from django.views import generic
 from django.urls import reverse_lazy
-from .models import NewsStory
+from .models import Category, NewsStory
 from .forms import StoryForm
 from users.models import CustomUser
 from django.core.exceptions import PermissionDenied
@@ -10,7 +10,6 @@ from django.shortcuts import redirect
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-# from .filters import SnippetFilter
 
 
 
@@ -26,6 +25,7 @@ class IndexView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.all()[:3]
         context['all_stories'] = NewsStory.objects.all()[:20]
+        context['category']= Category.objects.all()
         return context
 
 
@@ -74,16 +74,11 @@ class EditStoryView(generic.UpdateView):
         return obj
 
 
+class CategoryView(generic.ListView):
+    model = NewsStory
 
-# class SnippetListView(generic.ListView):
-#     model = Snippet
-#     template_name = "news/snippet.html"
+    template_name = 'news/category.html'
+    context_object_name = 'stories'
 
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['filter'] = SnippetFilter(self.request.GET, queryset=self.get_queryset())
-#         return context
-
-# class SnippetDetailView(generic.DetailView):
-#     model = Snippet
-#     template_name = "news/snippet.html"
+    def get_queryset(self):
+        return NewsStory.objects.filter(category__name__contains=self.kwargs['category'])

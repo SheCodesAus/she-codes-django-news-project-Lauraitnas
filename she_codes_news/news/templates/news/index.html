@@ -20,12 +20,16 @@
                 <p>No stories are available.</p>
             {% endif %}
         </div>
-        {% comment %} <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a> {% endcomment %}
     </div>
     
     <div class="new-story"><a class="button" href="{% url 'news:newStory' %}">Write New Story</a></div>
     
+    <select onchange="javascript:location.href = this.value;">
+        {% for cat in category %}
+        <option value="{% url 'news:category' cat.name%}">{{cat.name}}</option>
+        {% endfor %}
+    </select>
+
     <div class="external-div">
         <h2>All News</h2>
         <div id="all-stories">
