@@ -24,13 +24,15 @@
     
     <div class="new-story"><a class="button" href="{% url 'news:newStory' %}">Write New Story</a></div>
     
-    <select onchange="javascript:location.href = this.value;">
-        {% for cat in category %}
-        <option value="{% url 'news:category' cat.name%}">{{cat.name}}</option>
-        {% endfor %}
-    </select>
+    
 
     <div class="external-div">
+        <select onchange="javascript:location.href = this.value;">
+            {% for cat in category %}
+            <option value="{% url 'news:category' cat.name%}">{{cat.name}}</option>
+            {% endfor %}
+        </select>
+        
         <h2>All News</h2>
         <div id="all-stories">
             {% if all_stories %}

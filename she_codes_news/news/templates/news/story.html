@@ -23,6 +23,9 @@
     {% if not story.comments %}
         <h3>No comments yet </h3>
     {% else %}
+
+    <a href="{% url 'news:newComment' story.id %}">Add comment</a>
+    <br></br>
         {% for comment in story.comments.all %}
             <strong>
             {{comment.name}}

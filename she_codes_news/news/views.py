@@ -1,8 +1,8 @@
 from re import template
 from django.views import generic
 from django.urls import reverse_lazy
-from .models import Category, NewsStory
-from .forms import StoryForm
+from .models import Category, NewsStory, Comment
+from .forms import StoryForm, CommentForm
 from users.models import CustomUser
 from django.core.exceptions import PermissionDenied
 from django.views.generic.edit import UpdateView
@@ -44,6 +44,19 @@ class AddStoryView(LoginRequiredMixin,generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class AddCommentView(LoginRequiredMixin,generic.CreateView):
+    form_class = CommentForm
+    context_object_name = 'commentForm'
+    template_name = 'news/add_comment.html'
+    success_url = reverse_lazy('news:index')
+
+
+    def form_valid(self, form):
+        form.instance.newsstory_id = self.kwargs["pk"]
+        return super().form_valid(form)
+
         
 
 

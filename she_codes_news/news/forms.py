@@ -1,6 +1,7 @@
+# from xml.etree.ElementTree import Comment
 from django import forms
 from django.forms import ModelForm
-from .models import NewsStory
+from .models import NewsStory, Comment
 from django.utils import timezone
 
 
@@ -18,3 +19,9 @@ class StoryForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['pub_date'].initial = timezone.now().strftime("%Y-%m-%dT%H:%M")
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ["name", "body"]
+        
