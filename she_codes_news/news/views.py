@@ -1,3 +1,4 @@
+from audioop import reverse
 from re import template
 from django.views import generic
 from django.urls import reverse_lazy
@@ -50,14 +51,16 @@ class AddCommentView(LoginRequiredMixin,generic.CreateView):
     form_class = CommentForm
     context_object_name = 'commentForm'
     template_name = 'news/add_comment.html'
-    success_url = reverse_lazy('news:index')
+    # success_url = reverse_lazy('news:story', kwargs={self.kwargs["pk"]})
 
 
     def form_valid(self, form):
         form.instance.newsstory_id = self.kwargs["pk"]
         return super().form_valid(form)
 
-        
+    def get_success_url(self):
+        return reverse_lazy('news:story', kwargs={'pk': self.kwargs["pk"]})
+
 
 
 class DeleteStoryView(generic.DeleteView):
