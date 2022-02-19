@@ -10,7 +10,7 @@ from django.shortcuts import redirect
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+# from .filters import SnippetFilter
 
 
 
@@ -72,3 +72,18 @@ class EditStoryView(generic.UpdateView):
         if obj.author != self.request.user:
             raise PermissionDenied
         return obj
+
+
+
+# class SnippetListView(generic.ListView):
+#     model = Snippet
+#     template_name = "news/snippet.html"
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['filter'] = SnippetFilter(self.request.GET, queryset=self.get_queryset())
+#         return context
+
+# class SnippetDetailView(generic.DetailView):
+#     model = Snippet
+#     template_name = "news/snippet.html"

@@ -20,8 +20,8 @@
                 <p>No stories are available.</p>
             {% endif %}
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        {% comment %} <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a> {% endcomment %}
     </div>
     
     <div class="new-story"><a class="button" href="{% url 'news:newStory' %}">Write New Story</a></div>
