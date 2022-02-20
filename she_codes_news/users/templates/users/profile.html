@@ -41,7 +41,9 @@
                 <p>No stories are available.</p>
             {% endif %}
         </div>
-        <button class="button" href="{% url 'news:newStory' %}">Write New Story</button>
+        <div id="new_story_button_profile">
+        <a class="button" href="{% url 'news:newStory' %}">Write New Story</a>
+        </div>
     </div>
 </div>
 
