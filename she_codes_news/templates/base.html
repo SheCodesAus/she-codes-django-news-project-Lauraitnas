@@ -25,8 +25,24 @@
         <!-- content blocks here -->
         {% block content %} {% endblock %}
 
-        <footer>
-            <h2>This is the footer</h2>
+        <footer class="footer">
+            <div id="footer-items">
+                <div class="footer-button" >
+                    <a id="footer_sign" href="{% url 'users:createAccount' %}">Sign up to be an author!</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/laura-santi3/" target="_blank"> 
+                        <img class="social_foot" src="/static/images/github.png" alt="Github"> 
+                    </a>
+                    <a href="https://github.com/Lauraitnas" target="_blank"> 
+                        <img class="social_foot" src="/static/images/linkedin.png" alt="Linkedin"> 
+                    </a>
+                    <br>
+                </div>
+                <div class="footer-credit" >
+                    <p class="footer-item">&#169 2022 Laura Santi</p>
+                </div>
+            </div>
         </footer>
     </body>
 
