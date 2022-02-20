@@ -11,6 +11,7 @@ h2{
 h4 {
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
+    margin: 2px;
 }
 
 .story-title {
@@ -70,7 +71,17 @@ p {
     background-blend-mode:screen;
     
 }
+select {
+    font-size: 17px;
+    border: solid #f9a427;
+    padding: 10px;
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.1rem;
+}
 
+#filter{
+    text-align: center;
+}
 
 #all-stories {
     display: flex;
@@ -95,12 +106,17 @@ p {
     flex-direction: column;
 }
 
-.story_author {
+#story_author {
     text-align: center;
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
     color: #8245af;
+}
 
+#author_bio {
+    text-align: center;
+    font-style: italic;
+    font-family: auto;
 }
 
 
@@ -135,4 +151,38 @@ p {
 
 .story_image{
     max-width: 100%;
+    box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    -moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    margin-bottom: 150px;
+    margin-top: 50px;
+}
+
+#author-image {
+    padding: 50px;
+    border-radius: 50%;
+    width: 50%;
+    align-self: center;
+    
+}
+
+#connect {
+    color: #f9a427;
+    text-align: center;
+    padding: 15px;
+    border: solid;
+    letter-spacing: 2px;
+    align-self: center;
+    max-width: 70%;
+}
+
+#add-comment {
+    color: #f9a427;
+    text-align: center;
+    padding: 15px;
+    border: solid;
+    letter-spacing: 2px;
+    align-self: center;
+    max-width: 20%;
 }

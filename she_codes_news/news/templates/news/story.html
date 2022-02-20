@@ -11,9 +11,14 @@
 <div class="flex-div">
     <div id="story-wrapper">
         <img class="story_image" src="{{story.url}}"> 
-        <img src="{{story.author.profile_picture}}">
-        <h4 id="story_author"> Written by {{ story.author }}</h4>
-        <p>{{story.author.bio}}</p>
+        <img id="author-image" src="{{story.author.profile_picture}}">
+        <h3 id="story_author"> Written by {{ story.author }}</h3>
+        <p id="author_bio">{{story.author.bio}}</p>
+            <div id="connect">
+                <a href="{% url 'users:profile' story.author.id %}">
+                    <h4> Connect with the {{ story.author }}</h4>
+                </a>
+            </div>
     </div>
     <div id="story-content">
         <div>
@@ -23,9 +28,13 @@
         </div>
         <div class="comments">
             <h2>Comments...</h2>
-            <button><a href="{% url 'news:newComment' story.id %}">Add comment</a></button>
+            <div id="add-comment">
+                <a href="{% url 'news:newComment' story.id %}">
+                    <h4>Add comment</h4>
+                </a>
+            </div>
             {% if not story.comments %}
-                <h3>No comments yet </h3>
+                <h3>No comments yet</h3>
             {% else %}
             <br></br>
                 {% for comment in story.comments.all %}

@@ -20,20 +20,20 @@
                 <p>No stories are available.</p>
             {% endif %}
         </div>
-    </div>
-    
-    <div class="new-story"><a class="button" href="{% url 'news:newStory' %}">Write New Story</a></div>
-    
-    
-
+    </div>    
+    <div class="new-story">
+        <a class="button" href="{% url 'news:newStory' %}">Write New Story</a>
+    </div>   
     <div class="external-div">
-        <select onchange="javascript:location.href = this.value;">
-            {% for cat in category %}
-            <option value="{% url 'news:category' cat.name%}">{{cat.name}}</option>
-            {% endfor %}
-        </select>
         
         <h2>All News</h2>
+        <div id="filter">
+            <select onchange="javascript:location.href = this.value;">
+                {% for cat in category %}
+                <option value="{% url 'news:category' cat.name%}">{{cat.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
         <div id="all-stories">
             {% if all_stories %}
                 {% for story in all_stories %}
