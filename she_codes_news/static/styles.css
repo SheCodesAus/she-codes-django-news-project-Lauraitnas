@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
 
 
 body {
@@ -13,7 +14,7 @@ header {
     background-color: white;
     margin-top: 30px;
     padding-bottom: 30px;
-    border-bottom: solid 3px #8245af;
+    border-bottom: solid 3px #358597;
 }
 
 #logo {
@@ -24,18 +25,31 @@ header {
 
 h1 {
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 65px;
     margin: 0;
 }
 
 h2 {
     font-family: 'Bebas Neue', cursive;
-    /* text-align: center; */
+    text-align: center;
+    font-size: 50px;
 }
 
 h3 {
-    font-size: 2rem;
-    margin: 0;
+    font-size: 35px;
+}
+
+h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color:#358597;
+    margin:0;
+}
+
+h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color:#358597;
 }
 
 .header-text {
@@ -60,6 +74,11 @@ nav {
 
 nav a{
     padding: 10px;
+    color: #358597
+}
+
+a:hover {
+    color: #f4a896;
 }
 
 a {
@@ -71,21 +90,47 @@ a, p {
 }
 
 
-
-
 form {
     margin: 50px auto;
     width: 100%;
+    text-align: center;
+}
+
+form label {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    color: #358597;
+    letter-spacing: 1px;
+}
+
+form button {
+    font-family: 'Bebas Neue';
+    background-color: #f4a896;
+    border: solid #358597;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
+    font-size: 18px;
+    align-content: center;
+    letter-spacing: 3px;
+    color: #358597;
+}
+
+form input {
+    border: 1px solid #358597;
 }
 
 .fill-form {
     margin-left: 40px;
     margin-top: 70px;
 }
+.fill-form form{
+    width: 30%;
+    text-align: left;
+}
 
 .button {
-    color: #f9a427;
-    background-color: #8245af;
+    color: #f4a896;
+    background-color: #358597;
     text-align: center;
     font-size: 15px;
     padding: 15px;
@@ -95,32 +140,18 @@ form {
 }
 
 
-.form-item {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
-    flex-direction: column;
-    padding: 5px;
-}
-
 .fill-form label {
-    font-size: 15px;
-    color: #8245af;
+    font-size: 18px;
+    color: #358597;
     padding: 10px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Bebas Neue', cursive;
     letter-spacing: 1px;
     font-weight:600;
 }
 
-.fill-form input,
-.fill-form textarea {
-    flex-basis: 50%;
-}
-
 .fill-form input:hover,
 .fill-form textarea:hover {
-    border: 2px solid #f9a427;
+    border: 2px solid #f4a896;
 }
 
 
@@ -129,10 +160,26 @@ form {
     font-family: 'Oswald', sans-serif;
 }
 
-
-.fill-form button:hover {
-    border: 2px solid #8245af;
-    background-color: #f9a427;
-    color: #8245af;
+.fill-form-button {
+    color: #f4a896;
+    background-color: #358597;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px 15px 5px 15px;
+    border: solid;
+    align-content: center;
+    letter-spacing: 3px;
+    font-family: 'Bebas Neue', cursive;
+    margin: 5px;
 }
 
+.fill-form-button:hover {
+    border: 2px solid #358597;
+    background-color: #f4a896;
+    color: #358597;
+}
+
+
+footer{
+    background-color: #358597;
+}

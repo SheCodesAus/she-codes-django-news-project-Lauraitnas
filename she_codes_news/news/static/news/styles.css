@@ -1,18 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 
 
 
-h2{
-    text-align: center;
-    font-size: 50px;
-}
 
-h4 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
-    margin: 2px;
-}
 
 .story-title {
     font-size: 27px;
@@ -28,9 +20,12 @@ p {
 
 .story-card {
     margin: 10px;
-    border: 1px solid #000;
     padding: 3px;
-
+    border-radius: 25px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    background-color: white;
 }
 
 .story-card img {
@@ -38,18 +33,67 @@ p {
     height: 300px;
     object-fit:cover;
     text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    
+}
+
+#story-category{
+    color: #cccccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin-top: 15px
+}
+
+#story-title{
+    color: #222222;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.25;
+    padding: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+#story-author{
+    color: #f4a896;
+    margin: 20px;
+}
+
+#story-author:hover{
+    color: #358597;
+}
+
+.edit {
+    margin-bottom: 15px;
 }
 
 #delete_button, #edit_button {
-    color: #f9a427;
+    color: #f4a896;
     text-align: center;
     font-size: 20px;
-    padding: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
     letter-spacing: 1px;
+}
+
+#delete_button{
+    border-right: solid 1px #358597;
+}
+
+#delete_button:hover, #edit_button:hover {
+    color: #358597;
 }
 
 .external-div{
     margin-top: 150px;
+}
+
+#external-div2{
+    background-color: whitesmoke;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 #latest-stories {
@@ -66,17 +110,14 @@ p {
     justify-content: space-between;
 }
 
-#header-image {
-    background-color: #8245af;
-    background-blend-mode:screen;
-    
-}
+
 select {
     font-size: 17px;
-    border: solid #f9a427;
+    border: solid #f4a896;
     padding: 10px;
     font-family: 'Bebas Neue';
     letter-spacing: 0.1rem;
+    margin: 10px;
 }
 
 #filter{
@@ -110,8 +151,10 @@ select {
     text-align: center;
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
-    color: #8245af;
+    color: #358597;
+    margin: 20px;
 }
+
 
 #author_bio {
     text-align: center;
@@ -125,8 +168,8 @@ select {
 }
 
 .button {
-    color: #f9a427;
-    background-color: #8245af;
+    color: #f4a896;
+    background-color: #358597;
     text-align: center;
     font-size: 20px;
     padding: 15px;
@@ -168,7 +211,7 @@ select {
 }
 
 #connect {
-    color: #f9a427;
+    color: #f4a896;
     text-align: center;
     padding: 15px;
     border: solid;
@@ -178,7 +221,7 @@ select {
 }
 
 #add-comment {
-    color: #f9a427;
+    color: #f4a896;
     text-align: center;
     padding: 15px;
     border: solid;
