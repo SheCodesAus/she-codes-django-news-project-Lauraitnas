@@ -31,15 +31,19 @@
         </div>
     </div>
     <div id="my-stories-div">
-        <h2 class="title">My Stories</h2>
-        <div id="my-stories">
-            {% if customuser.newsstory_set.all %}
-                {% for story in customuser.newsstory_set.all %}
-                    {% include "news/storyCard.html" with story=story position=forloop.counter %}
-                {% endfor %}
-            {% else %}
-                <p>No stories are available.</p>
-            {% endif %}
+        {% if customuser == request.user %}
+            <h2 class="title">My Stories</h2>
+        {% else %}
+            <h2 class="title">{{ customuser.username }}'s Stories</h2>
+        {% endif %}
+            <div id="my-stories">
+                {% if customuser.newsstory_set.all %}
+                    {% for story in customuser.newsstory_set.all %}
+                        {% include "news/storyCard.html" with story=story position=forloop.counter %}
+                    {% endfor %}
+                {% else %}
+                    <p>No stories are available.</p>
+                {% endif %}
         </div>
         <div id="new_story_button_profile">
         <a class="button" href="{% url 'news:newStory' %}">Write New Story</a>
